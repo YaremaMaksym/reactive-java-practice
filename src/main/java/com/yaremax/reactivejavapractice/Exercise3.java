@@ -1,6 +1,7 @@
 package com.yaremax.reactivejavapractice;
 
 import java.io.IOException;
+import java.util.List;
 
 public class Exercise3 {
 
@@ -10,7 +11,11 @@ public class Exercise3 {
 
         // Get all numbers in the ReactiveSources.intNumbersFlux stream
         // into a List and print the list and its size
-        // TODO: Write code here
+        List<Integer> list = ReactiveSources.intNumbersFlux()
+                .toStream().toList();
+
+        System.out.println("The list is " + list +
+                "\nThe size is " + list.size());
 
 
         System.out.println("Press a key to end");
